@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { IssueList } from "./pages/issues/issue-list";
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", redirect: "/issues" },
   {
     path: "/issues",
-    component: () =>
-      import("./pages/issues/issue-list").then((m) => m.IssueList),
+    component: IssueList,
   },
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
