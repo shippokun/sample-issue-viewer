@@ -1,5 +1,3 @@
-<script lang="ts"></script>
-
 <template>
   <img alt="Vue logo" src="https://vitejs.dev/logo.svg" />
   <router-view />
