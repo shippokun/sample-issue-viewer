@@ -45,8 +45,12 @@ export const mutations: MutationTree<IssueState> = {
   ) => {
     const { open_issues_count } = args.result;
     const { page, perPage } = args;
+    const maxPage = Number.parseInt(
+      `${state.pagination.totalCount / state.pagination.perPage}`
+    );
     state.pagination.totalCount = open_issues_count;
     state.pagination.page = Number(page);
     state.pagination.perPage = Number(perPage);
+    state.pagination.maxPage = maxPage;
   },
 };

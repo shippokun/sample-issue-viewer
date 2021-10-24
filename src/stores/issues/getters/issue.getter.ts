@@ -20,9 +20,7 @@ export const issue = (state: IssueState): Issue | null => {
     : null;
 };
 export const pagination = (state: IssueState): Pagination => {
-  const { totalCount, perPage, page } = state.pagination;
-  const maxPage = Number.parseInt(`${totalCount / perPage}`);
-  return { perPage, page, minPage: 1, maxPage, totalCount };
+  return state.pagination;
 };
 
 export const getters: GetterTree<IssueState, RootState> = {
