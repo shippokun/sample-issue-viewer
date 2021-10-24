@@ -27,6 +27,8 @@ export default defineComponent({
   setup(props: Props) {
     const { issues, pagination, fetchAll } = useIssueStore();
 
+    fetchAll({ page: props.page, perPage: props.perPage });
+
     onUpdated(() => {
       fetchAll({ page: props.page, perPage: props.perPage });
     });
