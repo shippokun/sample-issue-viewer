@@ -4,17 +4,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "serve": "vite preview"
   },
   "dependencies": {
+    "bulma": "^0.9.3",
     "vue": "^3.2.16",
     "vue-router": "^4.0.11",
+    "vue3-markdown-it": "^1.0.9",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@octokit/types": "^6.34.0",
     "@vitejs/plugin-vue": "^1.9.3",
-    "gh-pages": "^3.2.3",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"

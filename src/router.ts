@@ -1,11 +1,15 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import { IssueList } from "./pages/issues/issue-list";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
-  { path: "/", redirect: "/issues" },
+  { path: '/', redirect: '/issues' },
   {
-    path: "/issues",
-    component: IssueList,
+    path: '/issues',
+    component: () => import('./pages/issues/issue-list/issue-list.page.vue'),
+  },
+  {
+    path: '/issues/:id',
+    component: () =>
+      import('./pages/issues/issue-detail/issue-detail.page.vue'),
   },
 ];
 
