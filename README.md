@@ -13,3 +13,14 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## MEMO
 
 - barrel がうまく効いてない
+- たぶん全体的に computed が意図した動きになっていない
+  - production だと computed で取得すると Proxy な Object ではなく、Dm(?)ていう Obj が飛んでくる
+  - dev でも pagination の動的変更ができていない
+    - 初回アクセス時に totalCount が加算されずに 0 になっている(pagination を触ると更新されるので、監視ができていない？)
+- pagination は共通化をするべきコンポーネント
+  - 同時に使い回しができるように要リファクタ対象
+- 他のリポジトリの issue なども見れるようにするに store の持ち方を考えるか、ビルド先に合わせて repo や org を変えるなどをやってみても面白そう
+  - store で合わせる場合は、root が org や repo を持つ?
+- build サイズが大きくなっているので（これだけで）パフォーマンス的にはよくない（ビルド時の警告参照）
+- vite はあくまでローカルに特化させるくらいが現時点ではいい？（感想）
+- この構成で進めるならある程度作成するファイル（および中身）は決まっているので hygen などで自動化させるのがよい
