@@ -1,5 +1,4 @@
 <script lang="tsx">
-import { useRouter } from 'vue-router';
 import { defineComponent, PropType, onUpdated } from 'vue';
 
 import { useIssueStore } from '../../../../../stores/issues/facades';
@@ -26,11 +25,9 @@ export default defineComponent({
     },
   },
   setup(props: Props) {
-    const router = useRouter();
     const { issues, pagination, fetchAll } = useIssueStore();
 
     onUpdated(() => {
-      console.log(props);
       fetchAll({ page: props.page, perPage: props.perPage });
     });
 
