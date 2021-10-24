@@ -9,6 +9,5 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 export default ({ mode }) => {
   return defineConfig({
     plugins: [vue(), vueJsx()],
-    base: mode == 'production' ? '/sample-issue-viewer/' : '/'
   });
 };
